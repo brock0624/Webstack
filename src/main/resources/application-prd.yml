@@ -1,0 +1,18 @@
+server:
+  port: 8002
+
+guns:
+  file-upload-path: /app/webstack/images
+
+log:
+  path: /applog/webstack/manage-logs
+
+spring:
+  datasource:
+    url: jdbc:mysql://zero.brock.fun:3306/rains_webstack?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT
+    username: brock
+    password: Iccc2018
+    filters: wall,mergeStat
+
+
+

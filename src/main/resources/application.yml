@@ -13,6 +13,10 @@ beetl:
   resource-auto-check: true       #热加载beetl模板，开发时候用
 
 spring:
+  application:
+    name: WebStack
+  profiles:
+    active: dev
   mvc:
     static-path-pattern: /static/**
     view:

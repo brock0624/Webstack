@@ -138,9 +138,9 @@
 			<version>${swagger.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>${swagger.version}</version>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>swagger-bootstrap-ui</artifactId>
+			<version>1.9.6</version>
 		</dependency>
 
 		<!--jwt token -->
@@ -247,30 +247,18 @@
 
 	<profiles>
 		<profile>
-			<id>local</id>
+			<id>dev</id>
 			<properties>
-				<spring.active>local</spring.active>
+				<spring.active>dev</spring.active>
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 		</profile>
 		<profile>
-			<id>dev</id>
+			<id>prd</id>
 			<properties>
-				<spring.active>dev</spring.active>
-			</properties>
-		</profile>
-		<profile>
-			<id>test</id>
-			<properties>
-				<spring.active>test</spring.active>
-			</properties>
-		</profile>
-		<profile>
-			<id>produce</id>
-			<properties>
-				<spring.active>produce</spring.active>
+				<spring.active>prd</spring.active>
 			</properties>
 		</profile>
 	</profiles>
