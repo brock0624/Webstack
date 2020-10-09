@@ -4,10 +4,9 @@ ENV INSTALL_DIR /opt/work
 
 RUN mkdir -p ${INSTALL_DIR}
 ADD entrypoint.sh ${INSTALL_DIR}/entrypoint.sh
-RUN chmod +x ${INSTALL_DIR}/entrypoint.sh
 ADD target/*.jar ${INSTALL_DIR}/app.jar
 EXPOSE 8080
 
 WORKDIR ${INSTALL_DIR}
-CMD ["entrypoint.sh"]
-ENTRYPOINT ["/sbin/tini", "--"]
+ENTRYPOINT ["sh","entrypoint.sh"]
+#ENTRYPOINT ["/sbin/tini", "--"]

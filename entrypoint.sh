@@ -5,7 +5,7 @@ cd ${INSTALL_DIR}
 if [[ $JAVA_OPTS ]]; then
 	JAVA_OPTS=$JAVA_OPTS
 else
-  JAVA_OPTS="-Xms25m -Xmx50m -XX:-UseGCOverheadLimit"
+  JAVA_OPTS="-Xms32m -Xmx64m -XX:-UseGCOverheadLimit"
 fi
 
 if [[ $DB_HOST ]]; then
