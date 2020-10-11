@@ -57,6 +57,20 @@ $ java -jar Webstack-Guns-nkt-1.0.jar
 
 默认密码：111111
 
+## Docker部署
+
+创建镜像
+
+~~~
+docker build -t brock0624/webstack:0.0.2 . 
+~~~
+
+创建容器
+
+~~~
+docker run -p 8012:8080 --name webstack -e TZ=Asia/Shanghai -e LOG_PATH=log -e DB_HOST=pi-mysql8 -e DB_DATABASE=prd_webstack -e DB_USERNAME=brock -e DB_PASSWORD=Iccc2018 -v /data/docker/webstack/log:/opt/work/log -v /data/docker/webstack/images:/opt/work/images --network mybridge brock0624/webstack:0.0.2 
+~~~
+
 
 
 ## 感谢

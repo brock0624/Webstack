@@ -16,7 +16,7 @@ spring:
   application:
     name: WebStack
   profiles:
-    active: dev
+    active: prd
   mvc:
     static-path-pattern: /static/**
     view:
