@@ -1,5 +1,5 @@
 <div class="sidebar-menu toggle-others fixed">
-    <div class="sidebar-menu-inner">
+    <div class="sidebar-menu-inner" id="sidebar-menu-inner">
         <header class="logo-env">
             <!-- logo -->
             <div class="logo">
@@ -54,3 +54,32 @@
         </ul>
     </div>
 </div>
+
+
+<script>
+    var scrollFunc = function (e) {
+        var direct = 0;
+        e = e || window.event;
+        if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
+            if (e.wheelDelta > 0) { //当滑轮向上滚动时
+                document.getElementById("sidebar-menu-inner").style.position = "fixed";
+            }
+            if (e.wheelDelta < 0) { //当滑轮向下滚动时
+                document.getElementById("sidebar-menu-inner").style.position = "absolute";
+            }
+        } else if (e.detail) {  //Firefox滑轮事件
+            if (e.detail< 0) { //当滑轮向上滚动时
+                document.getElementById("sidebar-menu-inner").style.position = "fixed";
+            }
+            if (e.detail> 0) { //当滑轮向下滚动时
+                document.getElementById("sidebar-menu-inner").style.position = "absolute";
+            }
+        }
+        ScrollText(direct);
+    }
+    if (document.addEventListener) {
+        document.addEventListener('DOMMouseScroll', scrollFunc, false);
+    }
+    window.onmousewheel = document.onmousewheel = scrollFunc;
+
+</script>
